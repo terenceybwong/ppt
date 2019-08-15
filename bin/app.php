@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace AskNicely\Spreadsheet;
+use AskNicely\Spreadsheet;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 
-const APP_NAME = 'ppt-generation';
+const APP_NAME = 'app';
 
 $commands = [
-    new PowerPointMergeCommand()
+    new Spreadsheet\PowerPointMergeCommand()
 ];
 
 $application = new Application(APP_NAME);
