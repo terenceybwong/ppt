@@ -34,6 +34,8 @@ final class PowerPointMerge implements SpreadsheetMergeInterface
 
         $tbs->Plugin(TBS_INSTALL, OPENTBS_PLUGIN);
         $tbs->LoadTemplate($this->templateFile);
+        $tbs->Plugin(OPENTBS_SELECT_SLIDE, 2);
+        $tbs->PlugIn(OPENTBS_CHANGE_PICTURE, $this->data['npsTrend'], ['adjust' => 'sameheight']);
         $tbs->Plugin(OPENTBS_SELECT_SLIDE, 1);
         $tbs->Show(OPENTBS_FILE, $this->outputFile);
     }
